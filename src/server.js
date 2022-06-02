@@ -7,6 +7,7 @@ import {
   badRequestHandler
 } from './errorHandlers.js'
 import blogPostsRouter from './api/blogPosts/index.js'
+import authorsRouter from './api/authors/index.js'
 import listEndpoints from 'express-list-endpoints'
 
 const server = express()
@@ -16,6 +17,7 @@ server.use(cors())
 server.use(express.json())
 
 server.use('/blogPosts', blogPostsRouter)
+server.use('/authors', authorsRouter)
 
 server.use(badRequestHandler)
 server.use(notFoundHandler)
